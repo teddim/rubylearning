@@ -1,5 +1,5 @@
-
-#rules 
+#first pass at roman numerals
+#rules
 # I is 1
 # V is 5
 # X is 10
@@ -11,18 +11,18 @@
 
 
 def roman digit
-	
+
 	rules = [ 'I', 'V', 'X', 'L', 'C', 'D', 'M']
 	num = digit[0]
 	place = digit[1]
-	
-	
+
+
 romannumeral = []
-if num == 5 
+if num == 5
 	romannumeral.push rules[place+1].to_s
 
 
-else if num > 5 
+else if num > 5
 	romannumeral.push rules[place+1].to_s
 	num = num - 5
 	num.times do
@@ -42,14 +42,10 @@ else if num < 5
 return romannumeral
 end
 
-	
+
 puts 'enter a number'
-numeral = gets.chomp.to_i 
+numeral = gets.chomp.to_i
 
 digit = [numeral,0]
 answer = roman digit
 puts answer.to_s
-
-
-
-
