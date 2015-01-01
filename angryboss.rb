@@ -1,3 +1,4 @@
+#mean boss program
 meanboss1 = 'What do you want?'
 puts meanboss1
 whatyousaid = gets.chomp
