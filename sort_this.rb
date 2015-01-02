@@ -20,23 +20,41 @@ def recursive_sort unsorted_array, sorted_array
         sorted_array = [unsorted_array[1],unsorted_array[0]]
         return sorted_array
       end
-  else if unsorted_array.length == 3 #compare the two numbers
+  else if unsorted_array.length >= 3 #compare the numbers
 
     if unsorted_array[0] < unsorted_array[1]
       if unsorted_array[0] < unsorted_array[2]
-        sorted_array = [unsorted_array[0]] + (recursive_sort unsorted_array[1..2], sorted_array)
+        num = unsorted_array.length - 1
+        sorted_array = [unsorted_array[0]] + (recursive_sort (unsorted_array - [unsorted_array[0]]), sorted_array)
+        puts 'sorted_array:' + sorted_array.to_s
+        puts 'unsorted_array:' + unsorted_array.to_s
+
         return sorted_array
-      else
-        sorted_array = [unsorted_array[2]] + (recursive_sort unsorted_array[0..1], sorted_array)
+      else # unsorted_array[0] > unsorted_array[2]
+        num = unsorted_array.length - 1
+        puts 'look here'
+        puts 'sorted_array:' + sorted_array.to_s
+        puts 'unsorted_array:' + unsorted_array.to_s
+      # something is wrong here
+        sorted_array = [unsorted_array[2]] + (recursive_sort (unsorted_array- [unsorted_array[2]]), sorted_array)
+        puts 'sorted_array:' + sorted_array.to_s
+        puts 'unsorted_array:' + unsorted_array.to_s
         return sorted_array
       end
     else
-      stillunsorted_array = unsorted_array[1..2] + [unsorted_array[0]]
+      num = unsorted_array.length - 1
+      stillunsorted_array = unsorted_array[1..num] + [unsorted_array[0]]
       sorted_array =  (recursive_sort stillunsorted_array, sorted_array)
+      #puts 'sorted_array:' + sorted_array.to_s
+      #puts 'unsorted_array:' + unsorted_array.to_s
+
       return sorted_array
     end
 
     if unsorted_array[0] > unsorted_array[1]
+      #puts 'sorted_array:' + sorted_array.to_s
+      #puts 'unsorted_array:' + unsorted_array.to_s
+
       if unsorted_array[1] < unsorted_array[2]
         return [unsorted_array[1]]
       else
@@ -84,5 +102,30 @@ puts answer.to_s
 puts 'array has 3 items. Expect [3,4,5]:'
 
 u_array = [3,5,4]
+answer = sort u_array
+puts answer.to_s
+
+
+puts 'array has 4 items. Expect [3,4,5,6]:'
+
+u_array = [3,5,6,4]
+answer = sort u_array
+puts answer.to_s
+
+puts 'array has 4 items. Expect [3,4,5,6]:'
+
+u_array = [4,6,3,5]
+answer = sort u_array
+puts answer.to_s
+
+puts 'array has 4 items. Expect [3,4,5,6]:'
+
+u_array = [4,6,5,3]
+answer = sort u_array
+puts answer.to_s
+
+puts 'array has 4 items. Expect [3,4,5,6]:'
+
+u_array = [5,3,4,6]
 answer = sort u_array
 puts answer.to_s
