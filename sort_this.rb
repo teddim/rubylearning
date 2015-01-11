@@ -2,7 +2,7 @@ def sort the_array
   for i in 0..the_array.length-1
     #puts the_array[i]
     for j in i+1..the_array.length-1
-      if the_array[j] < the_array[i]
+      if the_array[j].downcase < the_array[i].downcase
       temp = the_array[j]
       the_array[j] = the_array[i]
       the_array[i] = temp
@@ -70,5 +70,11 @@ puts answer.to_s
 puts 'array has 4 items. Expect [cat,dog,elephant,frog]:'
 
 u_array = ['elephant','cat','dog','frog']
+answer = sort u_array
+puts answer.to_s
+
+puts 'array has 4 items. Expect [cat,Dog,elephant,frog]:'
+
+u_array = ['elephant','cat','Dog','frog']
 answer = sort u_array
 puts answer.to_s
