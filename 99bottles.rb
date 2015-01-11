@@ -1,3 +1,4 @@
+# function to convert an integer to english
 def english_number number
 	if number < 0
 		return 'Please enter a number that is not negative.'
@@ -122,15 +123,15 @@ def english_number number
 				# now we just return "num_string"
 				num_string
 			end
-			
+
 # 99 bottles of beer on the wall
 
 puts 'give me a number please:'
 num = gets.chomp.to_i
 
 while num != 0
-	puts num.to_s + ' bottles of beer on the wall, ' + num.to_s + ' bottles of beer'
-	puts 'take one down, pass it around ' + (num -1).to_s + ' bottles of beer on the wall.'
+	puts (english_number num).capitalize + ' bottles of beer on the wall, ' + (english_number num) + ' bottles of beer.'
+	puts 'Take one down, pass it around ' + (english_number num-1) + ' bottles of beer on the wall.'
 	puts ' '
 	num = num - 1
 
