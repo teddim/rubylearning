@@ -3,9 +3,9 @@ def sort the_array
     #puts the_array[i]
     for j in i+1..the_array.length-1
       if the_array[j] < the_array[i]
-        temp = the_array[j]
-        the_array[j] = the_array[i]
-        the_array[i] = temp
+      temp = the_array[j]
+      the_array[j] = the_array[i]
+      the_array[i] = temp
       #puts '...' + the_array[j].to_s
     end
     end
@@ -19,56 +19,56 @@ u_array = []
 answer = sort u_array
 puts answer.to_s
 
-puts 'array has 1 item. Expect [4]:'
-u_array = [4]
+puts 'array has 1 item. Expect [dog]:'
+u_array = ['dog']
 answer = sort u_array
 puts answer.to_s
 
-puts 'array has 2 items. Expect [3,4]:'
+puts 'array has 2 items. Expect [cat,dog]:'
 
-u_array = [4,3]
+u_array = ['dog','cat']
 answer = sort u_array
 puts answer.to_s
 
-puts 'array has 3 items. Expect [3,4,5]:'
+puts 'array has 3 items. Expect [cat,dog,elephant]:'
 
-u_array = [4,3,5]
+u_array = ['dog','cat','elephant']
 answer = sort u_array
 puts answer.to_s
 
-puts 'array has 3 items. Expect [3,4,5]:'
+puts 'array has 3 items. Expect [cat,dog,elephant]:'
 
-u_array = [4,5,3]
+u_array = ['dog','elephant','cat']
 answer = sort u_array
 puts answer.to_s
 
-puts 'array has 3 items. Expect [3,4,5]:'
+puts 'array has 3 items. Expect [cat,dog,elephant]:'
 
-u_array = [3,5,4]
+u_array = ['cat','elephant','dog']
 answer = sort u_array
 puts answer.to_s
 
 
-puts 'array has 4 items. Expect [3,4,5,6]:'
+puts 'array has 4 items. Expect [cat,dog,elephant,frog]:'
 
-u_array = [3,5,6,4]
+u_array = ['cat','elephant','frog','dog']
 answer = sort u_array
 puts answer.to_s
 
-puts 'array has 4 items. Expect [3,4,5,6]:'
+puts 'array has 4 items. Expect [cat,dog,elephant,frog]:'
 
-u_array = [4,6,3,5]
+u_array = ['dog','frog','cat','elephant']
 answer = sort u_array
 puts answer.to_s
 
-puts 'array has 4 items. Expect [3,4,5,6]:'
+puts 'array has 4 items. Expect[cat,dog,elephant,frog]:'
 
-u_array = [4,6,5,3]
+u_array = ['dog','frog','elephant','cat']
 answer = sort u_array
 puts answer.to_s
 
-puts 'array has 4 items. Expect [3,4,5,6]:'
+puts 'array has 4 items. Expect [cat,dog,elephant,frog]:'
 
-u_array = [5,3,4,6]
+u_array = ['elephant','cat','dog','frog']
 answer = sort u_array
 puts answer.to_s
